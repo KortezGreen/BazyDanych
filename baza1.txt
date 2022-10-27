@@ -1,0 +1,1 @@
+create table postac (id_postaci integer primary key not null, nazwa varchar (40), rodzaj enum('wiking', 'ptak', 'kobieta'), data_ur date, wiek integer unsigned);
