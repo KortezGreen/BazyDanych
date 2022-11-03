@@ -25,6 +25,9 @@ alter table izba add kolor_izby varchar(40) default "czarny" after metraz;
 
 insert into izba (adres_budynku, nazwa_izby) values ('1', 'spizarnia');
 
-(zadanie 4)not included
+(zadanie 4)
 
-create table przetwory (id_przetwory integer primary key, rok_produkcji year default "1654", id_wykonawcy, wartość, dodatek varchar(40) default "papryczka chilli", id_konsumenta);
+create table przetwory (id_przetwory integer primary key, rok_produkcji year default (1654), id_wykonawcy integer, foreign key(id_wykonawcy) references postac(id_postaci), wartość varchar(40), dodatek varchar(40) default "papryczka chilli", id_konsumenta integer, foreign key(id_konsumenta) references postac(id_postaci));
+
+not included
+
