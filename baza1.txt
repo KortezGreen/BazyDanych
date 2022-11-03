@@ -10,3 +10,13 @@ update postac set wiek=88 where nazwa="tesciowa";
 
 (zadanie 2)
 
+create table walizka (id_walizki integer primary key not null auto_increment, pojemnosc integer unsigned, kolor enum("rozowy","teczowy","zolty"), id_wlasciciela integer, foreign key(id_wlasciciela) references postac(id_postaci) on delete cascade);
+
+alter table walizka alter kolor set default "rozowy";
+
+insert into walizka values(2, 50, "teczowy", 1);
+insert into walizka values(3, 20, "rozowy", 3);
+
+(zadanie 3)
+
+create table izba (adres_budynku integer, nazwa_izby varchar(40), metraz integer unsigned, wlasciciel integer, foreign key(wlasciciel) references postac(id_postaci) on delete set NULL, PRIMARY KEY(adres_budynku, nazwa_izby));
