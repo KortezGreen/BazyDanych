@@ -20,3 +20,7 @@ insert into walizka values(3, 20, "rozowy", 3);
 (zadanie 3)
 
 create table izba (adres_budynku integer, nazwa_izby varchar(40), metraz integer unsigned, wlasciciel integer, foreign key(wlasciciel) references postac(id_postaci) on delete set NULL, PRIMARY KEY(adres_budynku, nazwa_izby));
+
+alter table izba add kolor_izby varchar(40) default "czarny" after metraz;
+
+insert into izba (adres_budynku, nazwa_izby) values ('1', 'spizarnia');
