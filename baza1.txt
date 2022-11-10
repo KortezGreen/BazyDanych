@@ -51,7 +51,8 @@ update postac set funkcja="kapitan" where nazwa="bjorn";
 
 
 
-alter table postac foreign key (id_postaci) references statek(nazwa_statku); this not included
+
+ALTER TABLE postac ADD FOREIGN KEY (id_postaci) REFERENCES statek(nazwa_statku); (!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
 alter table statek add pasazer varchar(255);
 
 insert into statek (pasazer) select nazwa from postac where id_postaci=(1,2,4,5,6,7,8);
