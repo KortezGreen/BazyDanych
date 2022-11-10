@@ -29,5 +29,33 @@ insert into izba (adres_budynku, nazwa_izby) values ('1', 'spizarnia');
 
 create table przetwory (id_przetwory integer primary key, rok_produkcji year default (1654), id_wykonawcy integer, foreign key(id_wykonawcy) references postac(id_postaci), wartość varchar(40), dodatek varchar(40) default "papryczka chilli", id_konsumenta integer, foreign key(id_konsumenta) references postac(id_postaci));
 
-not included
+insert into przetwory (id_przetwory, rok_produkcji, dodatek) values ('1', '2000', 'papryczka chilli');
+
+(zadanie 5)
+
+insert into postac values (4, "thor1", "wiking", '2022-10-27', 3000);
+insert into postac values (5, "thor2", "wiking", '2022-10-27', 3000);
+insert into postac values (6, "thor3", "wiking", '2022-10-27', 3000);
+insert into postac values (7, "thor4", "wiking", '2022-10-27', 3000);
+insert into postac values (8, "thor5", "wiking", '2022-10-27', 3000);
+
+create table statek (nazwa_statku integer primary key, rodzaj_statku enum('maly', 'duzy'), data_wodowania date, max_ladownosc int);
+
+insert into statek (nazwa_statku, rodzaj_statku, data_wodowania, max_ladownosc) values ('1', 'maly', '2000-01-01', 50);
+insert into statek (nazwa_statku, rodzaj_statku, data_wodowania, max_ladownosc) values ('2', 'duzy', '2000-01-01', 500);
+
+alter table postac add funkcja varchar(40) after rodzaj;
+
+update postac set funkcja="kapitan" where nazwa="bjorn";
+
+
+
+
+alter table postac foreign key (id_postaci) references statek(nazwa_statku); this not included
+alter table statek add pasazer varchar(255);
+
+insert into statek (pasazer) select nazwa from postac where id_postaci=(1,2,4,5,6,7,8);
+
+delete from izba where adres_budynku =1;
+drop table izba;
 
