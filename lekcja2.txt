@@ -8,5 +8,8 @@ ALTER TABLE przetwory DROP FOREIGN KEY przetwory_ibfk_1;
 ALTER TABLE przetwory DROP FOREIGN KEY przetwory_ibfk_2;
 alter table postac drop primary key;
 
-(zadanie 2)
+(zadanie 2)?
 
+ALTER TABLE postac ADD pesel char(11);
+
+ALTER TABLE postac ADD primary key not null (pesel);
