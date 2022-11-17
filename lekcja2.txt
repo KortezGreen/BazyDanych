@@ -10,6 +10,7 @@ alter table postac drop primary key;
 
 (zadanie 2)?
 
-ALTER TABLE postac ADD pesel char(11);
+ALTER TABLE postac ADD pesel varchar(11);
 
-ALTER TABLE postac ADD primary key not null (pesel);
+UPDATE postac SET pesel = 123 WHERE pesel IS NULL;
+
