@@ -8,9 +8,64 @@ ALTER TABLE przetwory DROP FOREIGN KEY przetwory_ibfk_1;
 ALTER TABLE przetwory DROP FOREIGN KEY przetwory_ibfk_2;
 alter table postac drop primary key;
 
-(zadanie 2)?
+(zadanie 2)
 
 ALTER TABLE postac ADD pesel varchar(11);
+UPDATE postac SET pesel = '123' WHERE pesel IS NULL;
+alter table postac drop CONSTRAINT postac.PRIMARY;
+alter table postac add primary key (pesel);
 
-UPDATE postac SET pesel = 123 WHERE pesel IS NULL;
+alter table postac MODIFY COLUMN rodzaj enum('wiking', 'ptak', 'kobieta', 'syrena');
+
+insert into postac (id_postaci, nazwa, rodzaj) values (9 ,"Gertruda Nieszczera", "syrena");
+
+(zadanie 3)
+
+alter table statek MODIFY COLUMN rodzaj_statku enum('maly', 'duzy', 'statek_bjorna');
+insert into statek (nazwa_statku, rodzaj_statku, data_wodowania, max_ladownosc) values ('3', 'statek_bjorna', '2000-01-01', 500);
+INSERT INTO statek (pasazer) SELECT nazwa from postac WHERE nazwa='%a%';
+
+update statek set max_ladownosc = max_ladownosc * 0.7;
+
+ALTER TABLE postac ADD CHECK (wiek>1000);
+
+(zadanie 4)
+
+alter table postac MODIFY COLUMN rodzaj enum('wiking', 'ptak', 'kobieta', 'syrena', 'waz');
+insert into postac (id_postaci, nazwa, rodzaj) values (10 ,"Loko", "waz");
+
+CREATE TABLE Marynarz LIKE postac;
+                                    
+(zadanie 5)
+
+UPDATE statek SET pasazer = NULL;
+
+DELETE FROM postac WHERE nazwa='thor3';
+
+delete from statek where nazwa_statku = 1;
+delete from statek where nazwa_statku = 2;
+delete from statek where nazwa_statku = 3;
+
+drop table statek;
+
+create table zwierz (id_zwierz integer primary key not null auto_increment, nazwa varchar(40), wiek integer);
+
+f) przekopiuj z tabeli postac wszystkie zwierzaki 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
