@@ -50,22 +50,5 @@ drop table statek;
 
 create table zwierz (id_zwierz integer primary key not null auto_increment, nazwa varchar(40), wiek integer);
 
-f) przekopiuj z tabeli postac wszystkie zwierzaki 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO zwierz (id_zwierz, nazwa, wiek) SELECT id_postaci, nazwa, wiek FROM postac WHERE rodzaj=('ptak');
+INSERT INTO zwierz (id_zwierz, nazwa, wiek) SELECT id_postaci, nazwa, wiek FROM postac WHERE rodzaj=('waz');
