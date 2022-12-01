@@ -1,1 +1,10 @@
+(zadanie 1)
+
+CREATE TABLE kreatura AS (SELECT * FROM wikingowie);
+CREATE TABLE wikingowie AS (SELECT kreatura, zasob, ekwipunek) FROM wikingowie);
+
+SELECT * FROM zasob;
+
+
+
 
