@@ -1,6 +1,5 @@
 (zadanie 1)
 
-
 CREATE TABLE kreatura AS (SELECT * FROM wikingowie);
 CREATE TABLE zasob AS (SELECT * FROM wikingowie);
 CREATE TABLE ekwipunek AS (SELECT * FROM wikingowie);
