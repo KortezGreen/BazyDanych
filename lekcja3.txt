@@ -27,7 +27,7 @@ SELECT zasob AS pelna_waga FROM kreatura where waga=(ilość * waga) and POZYSKA
 
 (zadanie 5)
 
-1.Zakładając, że każdy rodzaj jedzenia to 30% odpadu, wyświetl masę właściwego jedzenia (netto) oraz wagę odpadków.
-
+select jedzenie as netto from kreatura where waga = waga * 0.7;
+select jedzenie as odpady from kreatura where waga = waga * 0.3;
 select zasob from kreatura where rodzaj IS NULL;
 select distinct zasob from kreatura where nazwa='Ba%' or nazwa='%os' order by nazwa DESC;
