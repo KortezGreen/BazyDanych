@@ -27,9 +27,7 @@ SELECT zasob AS pelna_waga FROM kreatura where waga=(ilość * waga) and POZYSKA
 
 (zadanie 5)
 
-
-
 1.Zakładając, że każdy rodzaj jedzenia to 30% odpadu, wyświetl masę właściwego jedzenia (netto) oraz wagę odpadków.
-2.Wyświetl zasoby, które nie mająrodzaju.
-3.Wyświetl wszystkie unikalne rodzaje zasobów, których nazwa zaczyna się od 'Ba' lub kończy się na 'os'. Dane posortuj alfabetycznie.
 
+select zasob from kreatura where rodzaj IS NULL;
+select distinct zasob from kreatura where nazwa='Ba%' or nazwa='%os' order by nazwa DESC;
