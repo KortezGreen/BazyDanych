@@ -27,3 +27,4 @@ select concat(kreatura.nazwa, ' ', kreatura.nazwa ) as cos_tam from zasob, ekwip
 
 (zadanie 5)
 
+
