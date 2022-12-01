@@ -6,7 +6,7 @@ CREATE TABLE zasob AS (SELECT * FROM wikingowie);
 CREATE TABLE ekwipunek AS (SELECT * FROM wikingowie);
 SELECT * FROM zasob;
 SELECT * FROM zasob where typ=jedzenie;
-select idZasobu, ilosc from kreatura where id=('1','3','5');
+select idZasobu, ilosc from kreatura where idKreatury=('1','3','5');
 
 (zadanie 2)
 
